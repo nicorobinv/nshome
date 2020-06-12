@@ -1,0 +1,11 @@
+{
+  "name": "nshome",
+  "version": "1.0.0",
+  "description": "make website",
+  "main": "main.js",
+  "author": "seungwon jang",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
