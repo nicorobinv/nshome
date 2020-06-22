@@ -3,21 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap"
+      rel="stylesheet"
+    />
+
     <title>NSHOME</title>
     <link rel="stylesheet" href="/css/reset.css" />
   </head>
-  <style>
-    .header {
-      height: 36px;
-      background-color: pink;
-    }
-    /*.content {
-      max-width: 1920px;
-      height: 600px;
-      margin: 0 auto;
-    }
-    */
-  </style>
+  <style></style>
+
   <body>
     <div class="wrap">
       <div class="top_logo">
@@ -43,7 +42,24 @@
         </ul>
       </div>
       <div class="container">
-        <div class="content"></div>
+        <div class="content">
+          <div class="js-weather"></div>
+          <div class="centerdiv">
+            <div class="js-clock">
+              <h1 style="font-size: 100px;">00:00</h1>
+            </div>
+            <form class="js-form form">
+              <input type="text" placeholder="what is your name?" />
+            </form>
+            <h4 class="js-greetings greetings" style="font-size: 48px;"></h4>
+            <div class="formdiv">
+              <form class="js-toDoForm" style="margin-bottom: 20px;">
+                <input type="text" placeholder="Write a to do" />
+              </form>
+            </div>
+            <ul class="js-toDoList"></ul>
+          </div>
+        </div>
       </div>
       <div class="footer">
         <div>
@@ -54,5 +70,10 @@
         </div>
       </div>
     </div>
+    <script src="clock.js"></script>
+    <script src="gretting.js"></script>
+    <script src="todo.js"></script>
+    <script src="bg.js"></script>
+    <script src="weather.js"></script>
   </body>
 </html>

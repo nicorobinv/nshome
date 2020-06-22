@@ -3,20 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MuseoModerno&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap"
+      rel="stylesheet"
+    />
+
     <title>NSHOME</title>
     <link rel="stylesheet" href="/css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="/fontello/fontello-81c46656/css/fontello.css"
+    />
   </head>
-  <style>
-    .header {
-      height: 100px;
-      background-color: pink;
-    }
-    .content {
-      max-width: 1920px;
-      height: 300px;
-      margin: 0 auto;
-      background-color: lightsalmon;
-    }
+
   </style>
   <body>
     <div class="wrap">
@@ -25,18 +28,26 @@
       </div>
       <div class="header">
         <ul class="menu">
-          <li class="menu_item"><a href="#" class="menu_link"> Home</a></li>
           <li class="menu_item active">
-            <a href="#" class="menu_link"> 구상중</a>
+            <a href="index.html" class="menu_link"> Home</a>
           </li>
-          <li class="menu_item"><a href="#" class="menu_link"> 생각중</a></li>
-          <li class="menu_item"><a href="#" class="menu_link"> 한마디</a></li>
           <li class="menu_item">
-            <a href="#" class="menu_link"> To do list</a>
+            <a href="introduce.html" class="menu_link"> 자기소개</a>
+          </li>
+          <li class="menu_item">
+            <a href="photo.html" class="menu_link"> 사진</a>
+          </li>
+          <li class="menu_item">
+            <a href="word.html" class="menu_link"> 한마디</a>
+          </li>
+          <li class="menu_item">
+            <a href="todolist.html" class="menu_link"> To do list</a>
           </li>
         </ul>
       </div>
-      <div class="content">content</div>
+      <div class="container">
+        <div class="content"></div>
+      </div>
       <div class="footer">
         <div>
           <br />
@@ -47,6 +58,6 @@
       </div>
     </div>
 
-    <footer></footer>
+    <script src="bg.js"></script>
   </body>
 </html>
