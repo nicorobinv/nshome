@@ -136,7 +136,7 @@ a {
 html,
 body {
   height: 100%;
-  font-family: "Source Sans Pro", "Hi Melody" Helvetica, sans-serif, cursive;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .wrap {
@@ -224,7 +224,8 @@ body {
   display: inline-block;
   border: 2px solid rgba(248, 181, 5, 0.5);
   background-color: rgba(248, 181, 5, 0.1);
-  padding: 0.5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 .content .avatar img {
@@ -236,6 +237,7 @@ body {
   font-size: 1.5rem;
 
   font-weight: 200;
+  margin-bottom: 2rem;
 }
 
 .content h1 strong {
@@ -249,10 +251,20 @@ body {
   border-bottom: 1px dotted rgba(248, 181, 5, 0.5);
 }
 
-.content ul .icons li {
+ul.icons li {
   display: inline-block;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
+ul.icons li a {
+  color: rgba(248, 181, 5, 0.5);
+  font-size: 40px;
+}
+ul.icons li .label {
+  display: none;
+}
 .form,
 .greetings {
   display: none;
@@ -269,6 +281,7 @@ body {
 .formdiv {
   color: white;
   opacity: 1;
+  text-shadow: 3px 3px 3px gray;
 }
 
 .centerdiv {
@@ -283,4 +296,10 @@ body {
 h4 {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+.container .content .js-weather {
+  padding-top: 20px;
+  padding-left: 20px;
+  font-size: 40px;
 }
