@@ -142,6 +142,8 @@ body {
 .wrap {
   height: 100%;
   box-sizing: border-box;
+  max-width: 1980px;
+  margin: 0 auto;
 }
 
 .menu {
@@ -224,8 +226,9 @@ body {
   display: inline-block;
   border: 2px solid rgba(248, 181, 5, 0.5);
   background-color: rgba(248, 181, 5, 0.1);
-  padding: 2rem;
+  padding: 0.5rem;
   margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .content .avatar img {
@@ -234,10 +237,15 @@ body {
 }
 
 .content h1 {
-  font-size: 1.5rem;
-
+  font-size: 3rem;
   font-weight: 200;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.content h2 {
+  font-size: 6rem;
+  font-weight: 200;
+  margin-bottom: 1.5rem;
 }
 
 .content h1 strong {
@@ -265,6 +273,7 @@ ul.icons li a {
 ul.icons li .label {
   display: none;
 }
+
 .form,
 .greetings {
   display: none;
@@ -282,6 +291,7 @@ ul.icons li .label {
   color: white;
   opacity: 1;
   text-shadow: 3px 3px 3px gray;
+  font-size: 3rem;
 }
 
 .centerdiv {
@@ -302,4 +312,58 @@ h4 {
   padding-top: 20px;
   padding-left: 20px;
   font-size: 40px;
+}
+
+.container .content .thumbnails {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container .content .thumbnails > div {
+  flex-grow: 1;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.container .content .thumbnails img {
+  width: 100%;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  display: block;
+}
+
+.container .content .thumbnails h3 {
+  border-left: 1px solid rgba(248, 181, 5, 0.5);
+  border-right: 1px solid rgba(248, 181, 5, 0.5);
+  border-bottom: 1px solid rgba(248, 181, 5, 0.5);
+  border-bottom-left-radius: 0.2rem;
+  border-bottom-right-radius: 0.2rem;
+  padding: 0.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .container .content .thumbnails {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .content h2 {
+    font-size: 2rem;
+    font-weight: 200;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .js-toDoList,
+  .js-weather,
+  .js-clock,
+  .js-greetings,
+  .formdiv {
+    font-size: 1.5rem;
+  }
 }
