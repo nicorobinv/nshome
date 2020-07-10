@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier */
 import { join } from "path";
 //import socketIO from "socket.io";
 import logger from "morgan";

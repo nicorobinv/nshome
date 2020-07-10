@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import gulp from "gulp";
 import sass from "gulp-sass";
 import autoprefixer from "gulp-autoprefixer";
@@ -15,8 +16,8 @@ const paths = {
     watch: "assets/scss/**/*.scss",
   },
   js: {
-    scr: "assets/js/main.js",
-    dest: "src/NODEJS/js",
+    src: "assets/js/main.js",
+    dest: "src/NODEJS/js/",
     watch: "assets/js/**/*.js",
   },
 };
@@ -51,5 +52,7 @@ const watchFiles = () => {
 };
 
 const dev = gulp.series(clean, styles, js, watchFiles);
+
+export const build = gulp.series(clean, styles, js);
 
 export default dev;

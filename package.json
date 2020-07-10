@@ -30,7 +30,7 @@
     "> 2%"
   ],
   "scripts": {
-    "start": "nodemon --exec babel-node init.js --delay 2",
+    "start": "nodemon --exec babel-node init.js --delay 2 --ignore assets/ --ignore src/NODEJS",
     "dev:assets": "gulp"
   },
   "devDependencies": {
