@@ -1,6 +1,6 @@
-/* eslint-disable prettier/prettier */
 import app from "./app.js";
 import socketIO from "socket.io";
+import socketController from "./src/socketController";
 
 const PORT = 80;
 
@@ -11,14 +11,4 @@ const server = app.listen(PORT, handleListening);
 
 const io = socketIO.listen(server);
 
-io.on("connection", (socket) => {
-  socket.on("newMessage", ({ message }) => {
-    socket.broadcast.emit("messageNotif", {
-      message,
-      nickname: socket.nickname || "Anon",
-    });
-  });
-  socket.on("setNickname", ({ nickname }) => {
-    socket.nickname = nickname;
-  });
-});
+io.on("connection", (socket) => socketController(socket));
