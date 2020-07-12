@@ -1,4 +1,5 @@
 import { handleMessageNotif } from "./chat";
+// eslint-disable-next-line no-undef
 const socket = io("/");
 
 function sendMessage(message) {

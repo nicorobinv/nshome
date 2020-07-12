@@ -10,6 +10,7 @@ import bodyParser from "body-parser";
 // import { userRouter } from "./router";
 //import { server } from "./init.js";
 import express from "express";
+import events from "./src/events";
 
 const app = express();
 const http = require("http");
@@ -26,7 +27,9 @@ app.use(helmet());
 
 app.use(logger("dev"));
 app.use(express.static(join(__dirname, "/")));
-//app.get("/", (req, res) => res.render("home"));
+app.get("/", (req, res) =>
+  res.render("home", { events: JSON.stringify(events) })
+);
 
 /*
 app.get("/", handleHome);
