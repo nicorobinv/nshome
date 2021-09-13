@@ -276,26 +276,6 @@ ul.icons li .label {
   display: none;
 }
 
-.form,
-.greetings {
-  display: none;
-}
-
-.showing {
-  display: block;
-}
-
-.js-toDoList,
-.js-weather,
-.js-clock,
-.js-greetings,
-.formdiv {
-  color: white;
-  opacity: 1;
-  text-shadow: 3px 3px 3px gray;
-  font-size: 3rem;
-}
-
 .centerdiv {
   display: block;
   top: 50%;
@@ -357,15 +337,5 @@ h4 {
     font-size: 2rem;
     font-weight: 200;
     margin-bottom: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .js-toDoList,
-  .js-weather,
-  .js-clock,
-  .js-greetings,
-  .formdiv {
-    font-size: 1.5rem;
   }
 }

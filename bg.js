@@ -3,11 +3,19 @@ const hps = homephoto.style;
 
 const IMG_NUMBER = 63;
 
+function handleImageLoad(event) {
+  event.target.classList.remove("invisible");
+  event.target.classList.add("bgImage");
+}
+
 function paintImage(imgNumber) {
+  const image = new Image();
   hps.backgroundPosition = `center`;
   hps.backgroundRepeat = `no-repeat`;
   hps.backgroundImage = `url(images/home/${imgNumber + 1}.jpg)`;
   hps.backgroundSize = `cover`;
+  image.classList.add("invisible");
+  image.addEventListener("load", handleImageLoad);
 }
 
 function genRandom() {
@@ -21,28 +29,3 @@ function init() {
 }
 
 init();
-
-/*
-const homephoto = document.querySelector("content");
-
-const IMG_NUMBER = 63;
-
-function paintImage(imgNumber) {
-	const image = new Image();
-	image.src = `/images/home/${imgNumber + 1}.jpg`;
-	homephoto.appendChild(image);
-}
-
-function genRandom() {
-	const number = Math.floor(Math.random() * IMG_NUMBER);
-	return number;
-}
-
-function init() {
-	const randomNumber = genRandom();
-	paintImage(randomNumber);
-}
-
-init();
-
-*/

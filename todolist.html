@@ -17,7 +17,9 @@
       type="image/x-icon"
     />
     <title>NSHOME</title>
+    <script src="https://kit.fontawesome.com/334f222d43.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="toDo.css" />
   </head>
   <style></style>
 
@@ -47,22 +49,37 @@
       </div>
       <div class="container">
         <div class="content">
-          <div class="js-weather"></div>
-          <div class="centerdiv">
-            <div class="js-clock">
-              <h2>00:00</h2>
-            </div>
-            <form class="js-form form">
-              <input type="text" placeholder="what is your name?" />
-            </form>
-            <h4 class="js-greetings greetings"></h4>
-            <div class="formdiv">
-              <form class="js-toDoForm" style="margin-bottom: 20px;">
-                <input type="text" placeholder="Write a to do" />
-              </form>
-            </div>
-            <ul class="js-toDoList"></ul>
+          <div class="js-weather">
           </div>
+          <div class="mainBox">
+            <div class="js-dummyBox dummyBox invisible"></div>
+            <div class="js-clockBox clockBox fadein invisible">
+                <h1 class="js-clock clock">00:00</h1>
+            </div>
+
+            <div class="js-wholeGreeting">
+
+                <div class="js-hajimemashite hajimemashite fadein showing">
+                    Hi! It's a Good day!<!-- 나타났다가 사라지고 Tell me your name 으로 내용 바꾼후 다시 나타냄-->
+                </div>
+                <div class="js-greetingBox greetingBox">
+                    <span class="js-greeting greeting fadein invisible">
+                    </span>
+                    <span id="hide"></span>
+                </div>
+                <form class="js-nameForm nameForm fadein showing">
+                    <input type="text">
+                </form>
+
+            </div>
+            <div class="js-toDoBox toDoBox fadein invisible">
+                <form class="js-toDoForm toDoForm">
+                    <input type="text" placeholder="Write a to do">
+                </form>
+                <ul class="js-toDoList toDoList">
+
+                </ul>
+            </div>
         </div>
       </div>
       <div class="footer">
@@ -79,5 +96,6 @@
     <script src="todo.js"></script>
     <script src="bg.js"></script>
     <script src="weather.js"></script>
+    <script src="rename.js"></script>
   </body>
 </html>

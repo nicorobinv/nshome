@@ -1,54 +1,53 @@
-/* eslint-disable prettier/prettier */
-const toDoForm = document.querySelector(".js-toDoForm"),
-  toDoInput = toDoForm.querySelector("input"),
-  toDoList = document.querySelector(".js-toDoList");
+const toDoForm = document.querySelector(".js-toDoForm");
+const toDoInput = toDoForm.querySelector("input");
+const toDoList = document.querySelector(".js-toDoList");
 
-const TODOS_LS = "toDos";
-
-let toDos = [];
+const TODOS_LS = "toDo";
+let arrayNum = 1;
+let toDoArr = [];
 
 function deleteToDo(event) {
   const btn = event.target;
   const li = btn.parentNode;
-  toDoList.removeChild(li);
-  const cleanToDos = toDos.filter(function (toDo) {
-    return toDo.id !== parseInt(li.id);
+  const cleanToDoArr = toDoArr.filter(function (todo) {
+    return todo.id !== parseInt(li.id);
   });
-  toDos = cleanToDos;
-  saveToDos();
+  toDoList.removeChild(li);
+  toDoArr = cleanToDoArr;
+  saveToDo();
 }
 
-function saveToDos() {
-  localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
+function saveToDo() {
+  localStorage.setItem(TODOS_LS, JSON.stringify(toDoArr));
 }
 
-function paintToDo(text) {
+function handleSubmitToDo(event) {
+  event.preventDefault();
+  const currentValue = toDoInput.value;
+  toDoInput.value = "";
+  paintToDo(currentValue);
+}
+
+function paintToDo(todo) {
   const li = document.createElement("li");
-  const delBtn = document.createElement("button");
+  const delBtn = document.createElement("i");
   const span = document.createElement("span");
-  const newId = toDos.length + 1;
+  delBtn.addEventListener("click", deleteToDo);
   delBtn.classList.add("far");
   delBtn.classList.add("fa-times-circle");
   delBtn.style.cursor = "pointer";
-  delBtn.addEventListener("click", deleteToDo);
-  span.innerText = text;
+  span.innerText = todo;
   li.appendChild(delBtn);
   li.appendChild(span);
-  li.id = newId;
+  li.id = arrayNum;
   toDoList.appendChild(li);
   const toDoObj = {
-    text: text,
-    id: newId,
+    text: todo,
+    id: arrayNum,
   };
-  toDos.push(toDoObj);
-  saveToDos();
-}
-
-function handleSubmit(event) {
-  event.preventDefault();
-  const currentValue = toDoInput.value;
-  paintToDo(currentValue);
-  toDoInput.value = "";
+  arrayNum += 1;
+  toDoArr.push(toDoObj);
+  saveToDo();
 }
 
 function loadToDos() {
@@ -63,7 +62,7 @@ function loadToDos() {
 
 function init() {
   loadToDos();
-  toDoForm.addEventListener("submit", handleSubmit);
+  toDoForm.addEventListener("submit", handleSubmitToDo);
 }
 
 init();
