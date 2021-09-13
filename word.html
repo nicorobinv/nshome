@@ -12,7 +12,7 @@
       href="/images/logo/favicon.ico.png"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="/src/NODEJS/styles/styles.css" />
+
     <title>NSHOME</title>
     <link rel="stylesheet" href="/css/reset.css" />
   </head>
@@ -34,7 +34,7 @@
             <a href="photo.html" class="menu_link"> 사진</a>
           </li>
           <li class="menu_item active">
-            <a href="word.html" class="menu_link"> 한마디</a>
+            <a href="word.html" class="menu_link"> chat</a>
           </li>
           <li class="menu_item">
             <a href="todolist.html" class="menu_link"> To do list</a>
@@ -43,14 +43,20 @@
       </div>
       <div class="container">
         <div class="content">
-          <div class="loginBox">
-            <form id="jsLogin" action="">
-              <input type="text" placeholder="What's your nickname?" />
+          <div id="welcome">
+            <form action="">
+              <input placeholder="Room name" , type="text" required />
             </form>
+            <button>Enter Room</button>
           </div>
-          <div class="gameContainer" id="jsGame">
-            <h1>You are logged in</h1>
-            <div id="jsNotifications"></div>
+          <div id="room">
+            <h3>
+              <ul></ul>
+            </h3>
+            <form action="">
+              <input placeholder="message" , required, type="text" />
+              <button>Send</button>
+            </form>
           </div>
         </div>
       </div>
@@ -64,15 +70,6 @@
       </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/index.js"></script>
-    <script src="init.js"></script>
-    <script src="assets/js/login.js"></script>
-    <script src="/assets/js/main.js"></script>
-    <script src="assets/js/notifications.js"></script>
-    <script src="assets/js/sockets.js"></script>
-    <script src="src/socketController.js"></script>
-    <script>
-      window.events = { setNickname: "setNickname" };
-    </script>
+    <script src="./application.js"></script>
   </body>
 </html>
