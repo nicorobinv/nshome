@@ -1,5 +1,8 @@
-const socket = io.connect("http://localhost:80");
+const socket = io.connect("http://localhost:3000");
 
+socket.onopen = function (event) {
+  socket.send("connect");
+};
 const welcome = document.getElementById("welcome");
 const form = welcome.querySelector("form");
 const room = document.getElementById("room");
@@ -16,7 +19,9 @@ function showRoom() {
 }
 
 function handleRoomSubmit(event) {
+  console.log(event);
   event.preventDefault();
+
   const input = form.querySelector("input");
   socket.emit("enter_room", input.value, showRoom);
   roomName = input.value;

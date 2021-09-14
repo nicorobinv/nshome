@@ -8,6 +8,8 @@ import express from "express";
 
 const app = express();
 
+app.use(express.static(__dirname + "/static"));
+
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

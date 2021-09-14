@@ -1,18 +1,19 @@
-import http from "http";
-import SocketIO from "socket.io";
-import express from "express";
-var io = require("socket.io")(httpServer);
-
+const express = require("express");
 const app = express();
+
+const server = require("http").createServer(app);
+
+let wsServer = require("socket.io")(server);
+
+app.use(express.static(__dirname + "/static"));
+//app.use(express.static(__dirname + "/node_modules"));
 
 app.get("/", function (req, res) {
   res.sendFile(__dirname + "/word.html");
 });
 
-const httpServer = http.createServer(app);
-const wsServer = SocketIO(httpServer);
-
 wsServer.on("connection", (socket) => {
+  console.log(socket);
   socket.onAny((event) => {
     console.log(`Socket Event: ${event}`);
   });
@@ -22,5 +23,7 @@ wsServer.on("connection", (socket) => {
   });
 });
 
-const handleListen = () => console.log(`Listening on http://localhost:3000`);
-httpServer.listen(3000, handleListen);
+const handleListen = () => {
+  console.log(`Listening on http://localhost:3000`);
+};
+server.listen(3000, handleListen);
