@@ -1,22 +1,39 @@
-import { join } from "path";
+const { join } = require("path");
 
-import logger from "morgan";
-import helmet from "helmet";
-import cookieParser from "cookie-parser";
-import bodyParser from "body-parser";
-import express from "express";
+const logger = require("morgan");
+const helmet = require("helmet");
+const cookieParser = require("cookie-parser");
+const bodyParser = require("body-parser");
+const express = require("express");
 
 const app = express();
+const PORT = 80;
 
-app.use(express.static(__dirname + "/static"));
+const server = require("http").createServer(app);
+
+let wsServer = require("socket.io")(server);
+
+app.use(express.static(join(__dirname, "/static")));
 
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+wsServer.on("connection", (socket) => {
+  //console.log(socket);
+  socket.onAny((event) => {
+    console.log(`Socket Event: ${event}`);
+  });
+  socket.on("enter_room", (roomName, done) => {
+    socket.join(roomName);
+    done();
+  });
+});
+
 app.use(helmet());
 
 app.use(logger("dev"));
-app.use(express.static(join(__dirname, "/")));
 
-export default app;
+const handleListen = () =>
+  console.log(`✅Listening on: http://www.nshome.me:${PORT}`);
+server.listen(PORT, handleListen);

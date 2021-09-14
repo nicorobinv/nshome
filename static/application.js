@@ -1,8 +1,5 @@
-const socket = io.connect("http://localhost:3000");
+const socket = io.connect("http://www.nshome.me/");
 
-socket.onopen = function (event) {
-  socket.send("connect");
-};
 const welcome = document.getElementById("welcome");
 const form = welcome.querySelector("form");
 const room = document.getElementById("room");
@@ -18,6 +15,11 @@ function showRoom() {
   h3.innerText = `Room ${roomName}`;
 }
 
+// eslint-disable-next-line no-unused-vars
+function test() {
+  console.log(socket.emit("SendData", { data: "test" }));
+}
+
 function handleRoomSubmit(event) {
   console.log(event);
   event.preventDefault();
@@ -26,6 +28,7 @@ function handleRoomSubmit(event) {
   socket.emit("enter_room", input.value, showRoom);
   roomName = input.value;
   input.value = "";
+  socket.emit("text");
 }
 
 form.addEventListener("submit", handleRoomSubmit);

@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
 	 v2.0 | 20110126
 	 License: none (public domain)
 */
@@ -186,7 +186,8 @@ body {
 
 .top_logo {
   height: 150px;
-  background-image: url("/images/logo/horizontal_tagline_on_corporate_1920x500px_by_logaster.png");
+  /*background-image: url("../images/images/logo/horizontal_tagline_on_corporate_1920x500px_by_logaster.png");*/
+  background-image: url("../images/logo/horizontal_tagline_on_corporate_1920x500px_by_logaster.png");
   background-size: auto 300%;
   background-position: center center;
   background-repeat: no-repeat;
