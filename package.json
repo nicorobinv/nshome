@@ -24,9 +24,7 @@
     "> 2%"
   ],
   "scripts": {
-    "dev": "nodemon --exec babel-node server.js",
-    "start": "nodemon --exec babel-node app.js --delay 2 --ignore assets/ --ignore src/NODEJS",
-    "devs": "nodemon --exec babel-node init.js --delay 2 --ignore assets/ --ignore src/NODEJS"
+    "start": "nodemon --exec babel-node app.js --delay 2 --ignore assets/ --ignore src/NODEJS"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.4",
