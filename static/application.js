@@ -1,4 +1,6 @@
 const socket = io.connect("http://www.nshome.me/");
+//const socket = io.connect("http://localhost:80/");
+
 
 const welcome = document.getElementById("welcome");
 const form = welcome.querySelector("form");
@@ -8,19 +10,19 @@ room.hidden = true;
 
 let roomName;
 
-function addMessage(message) {
-  const ul = room.querySelector("ul");
-  const li = document.createElement("li");
-  li.innerText = message;
-  ul.appendChild(li);
+
+
+function addMessage(msg) {
+  let chatLog = document.getElementById('chatLog')
+  let chatTag = document.createElement('li')
+  chatTag.innerText = msg;
+  chatLog.appendChild(chatTag);
 }
 
 function handleMessageSubmit(event) {
   event.preventDefault();
   const input = room.querySelector("input");
-  socket.emit("new_message", input.value, roomName, () => {
-    addMessage(`You: ${input.value}`);
-  });
+  socket.emit("message", input.value, 'YOU');
 }
 
 function showRoom() {
@@ -48,6 +50,10 @@ function handleRoomSubmit(event) {
 
 form.addEventListener("submit", handleRoomSubmit);
 
+socket.on('receiveMessage', (msg, name) => {
+  addMessage(name + ' : ' + msg)
+})
+
 socket.on("welcome", () => {
   addMessage("someone joined!");
 });
@@ -55,5 +61,3 @@ socket.on("welcome", () => {
 socket.on("bye", () => {
   addMessage("someone left!");
 });
-
-socket.on("new_message", addMessage);

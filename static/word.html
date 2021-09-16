@@ -53,10 +53,12 @@
           </div>
           <div id="room">
             <h3></h3>
-            <ul></ul>
+            <ul id="chatLog">
+
+            </ul>
             <form action="">
-              <input placeholder="message" , required, type="text" />
-              <button>Send</button>
+              <input placeholder="message" required, type="text" />
+              <button onclick="handleMessageSubmit(event)">Send</button>
             </form>
           </div>
         </div>

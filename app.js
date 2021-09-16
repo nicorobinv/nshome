@@ -21,6 +21,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 wsServer.on("connection", (socket) => {
   //console.log(socket);
+  socket.on('message', (msg, name) => {
+    wsServer.emit('receiveMessage', msg, name);
+  });
   socket.onAny((event) => {
     console.log(`Socket Event: ${event}`);
   });
@@ -28,6 +31,7 @@ wsServer.on("connection", (socket) => {
     socket.join(roomName);
     done();
   });
+
 });
 
 app.use(helmet());
