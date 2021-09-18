@@ -31,20 +31,20 @@ function addHoverOnRenameBtn() {
 }
 
 function seeDummyBox() {
-  dummyBox.classList.remove("invisible");
+  dummyBox.classList.toggle("invisible");
 }
 
 function seeToDoBox() {
-  toDoBox.classList.remove("invisible");
+  toDoBox.classList.toggle("invisible");
 }
 
 function seeClockBox() {
-  clockBoxForGreetingJs.classList.remove("invisible");
+  clockBoxForGreetingJs.classList.toggle("invisible");
 }
 
 function seeGreeting() {
   //paintGreeting 되고나서 greeting이 보이도록 invisible 클래스를 지움
-  greeting.classList.remove("invisible");
+  greeting.classList.toggle("invisible");
   addHoverOnRenameBtn();
 }
 
@@ -91,7 +91,7 @@ function removeHajimemashiteAni() {
   hajimemashite.classList.add("fadeout");
   hajimemashite.addEventListener("animationend", function () {
     hajimemashite.classList.remove("fadeout");
-    //hajimemashite.classList.remove("showing");
+    hajimemashite.classList.remove("showing");
   });
 }
 
@@ -138,8 +138,9 @@ function loadName() {
   if (userName === null) {
     askForName();
   } else {
-    successLoad();
     paintGreeting(userName);
+    seeToDoBox();
+    successLoad();
   }
 }
 
