@@ -17,11 +17,13 @@ function addMessage(message) {
   let chatLog = document.getElementById("chatLog");
   let chatTag = document.createElement("li");
   chatTag.innerText = message;
+  chatLog.classList.add("me");
   chatLog.appendChild(chatTag);
 }
 
 function handleMessageSubmit(event) {
   event.preventDefault();
+
   const input = room.querySelector("#msg input");
   const value = input.value;
   socket.emit("new_message", input.value, roomName, () => {

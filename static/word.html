@@ -45,13 +45,22 @@
       </div>
       <div class="container">
         <div class="content chat">
+          <div class="chat_wrap">
+            <div class="header">
+                CHAT
+            </div>
+        
+          <div class="roomdiv">
+            <h4>
+              Open Rooms:
+              <ul id="roomList"></ul>
+            </h4>
+          </div>
           <div id="welcome">
             <form action="">
               <input placeholder="Room name" , type="text" required />
               <button>Enter Room</button>
             </form>
-            <h4>Open Rooms:</h4>
-            <ul id="roomList"></ul>
           </div>
           <div id="room">
             <h3></h3>
@@ -64,14 +73,14 @@
             </div>
             <div id="messagediv">
               <form id="msg" , action="">
-                <input placeholder="message" required, type="text" />
-                <button onclick="handleMessageSubmit(event)">Send</button>
+                <input id="meginput" placeholder="message" required, type="text" />
+                <button id="btn" onclick="handleMessageSubmit(event)">Send</button>
               </form>
             </div>
           </div>
         </div>
       </div>
-      <button onclick="test()">socket.io활성화</button>
+      <!-- <button onclick="test()">socket.io활성화</button> -->
       <div class="footer">
         <div>
           <br />

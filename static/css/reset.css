@@ -330,10 +330,12 @@ h4 {
 @media (max-width: 480px) {
   .container .content .thumbnails {
     display: block;
+    width: 100%;
+    font-size: 2rem;
   }
 }
 
-@media (max-width: 480px) {
+@smedia (max-width: 480px) {
   .content h2 {
     font-size: 2rem;
     font-weight: 200;
@@ -341,19 +343,24 @@ h4 {
   }
 }
 
-.content .chat {
-  margin: auto;
-  margin-top: 100px;
-  border-radius: 20px;
-  background-color: lightblue;
-  text-align: center;
-  width: 500px;
-  height: 800px;
+@media (max-width: 480px) {
+  .mainBox {
+    font-size: 1px;
+    width: 100%;
+  }
 }
 
-/* 채팅 영역 */
-#messagediv {
-  height: 90%;
-  width: 100%;
-  overflow-y: auto;
+@media (max-width: 480px) {
+  .content.chat {
+    font-size: 1px;
+    width: 100%;
+  }
+}
+
+media (max-width: 480px) {
+  .js-wholeGreeting {
+    font-size: 1px;
+
+    width: 100%;
+  }
 }
