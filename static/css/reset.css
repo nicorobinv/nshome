@@ -345,22 +345,14 @@ h4 {
 
 @media (max-width: 480px) {
   .mainBox {
-    font-size: 1px;
+    font-size: 2rem;
     width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .content.chat {
-    font-size: 1px;
-    width: 100%;
-  }
-}
-
-media (max-width: 480px) {
-  .js-wholeGreeting {
-    font-size: 1px;
-
+    font-size: 2rem;
     width: 100%;
   }
 }

@@ -23,31 +23,6 @@ h3 {
   height: 100vw;
 }
 
-/* 채팅 영역 */
-#messagediv {
-  height: 90%;
-  width: 100%;
-  overflow-y: auto;
-}
-
-/* 접속 알림 */
-.connect {
-  width: 90%;
-  margin: auto;
-  background-color: aquamarine;
-  text-align: center;
-  margin-top: 10px;
-}
-
-/* 접속 종료 알림 */
-.disconnect {
-  width: 90%;
-  margin: auto;
-  background-color: indianred;
-  text-align: center;
-  margin-top: 10px;
-}
-
 /* 내가 보낸 메시지 */
 .me {
   display: inline-block;
@@ -60,15 +35,6 @@ h3 {
   background-color: #fcfcfc;
   color: #555;
   text-align: left;
-}
-
-/* 상대방이 보낸 메시지 */
-.other {
-  width: 90%;
-  margin: auto;
-  background-color: white;
-  border-radius: 5px;
-  margin-top: 10px;
 }
 
 h4 {
