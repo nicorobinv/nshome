@@ -3,7 +3,6 @@ const { join } = require("path");
 const logger = require("morgan");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
-const bodyParser = require("body-parser");
 const express = require("express");
 
 const app = express();
@@ -19,8 +18,9 @@ app.use(logger("dev"));
 app.use(express.static(join(__dirname, "/static")));
 
 app.use(cookieParser());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.json());
 
 function publicRooms() {
   const {
