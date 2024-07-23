@@ -3,19 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="shortcut icon"
-      href="/images/logo/favicon.ico.png"
-      type="image/x-icon"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="/images/logo/favicon.ico.png" type="image/x-icon" />
     <title>NSHOME</title>
     <link rel="stylesheet" href="./css/reset.css" />
   </head>
-  <style></style>
   <body>
     <div class="wrap">
       <div class="top_logo">
@@ -44,29 +36,28 @@
         <div class="content">
           <section class="thumbnails">
             <div>
-              <img src="https://source.unsplash.com/featured/?water,mountain" />
+              <img id="img1" />
               <h3>Water & Mountain</h3>
 
-              <img src="https://source.unsplash.com/featured/?galaxy,aurora" />
+              <img id="img2" />
               <h3>Galaxy & Aurora</h3>
             </div>
             <div>
-              <img src="https://source.unsplash.com/featured/?japan" />
+              <img id="img3" />
               <h3>Japan</h3>
 
-              <img src="https://source.unsplash.com/featured/?travel" />
+              <img id="img4" />
               <h3>Travel</h3>
 
-              <img src="https://source.unsplash.com/featured/?nature" />
+              <img id="img5" />
               <h3>Nature</h3>
             </div>
             <div>
               <a href="#"
-                ><img src="https://source.unsplash.com/featured/?flower"
-              /></a>
+                ><img id="img6" /></a>
               <h3>Flower</h3>
 
-              <img src="https://source.unsplash.com/featured/?animal" />
+              <img id="img7" />
               <h3>Animal</h3>
             </div>
           </section>
@@ -77,9 +68,35 @@
           <br />
           nicorobinv@kakao.com<br />
           http:www.nshome.me <br />
-          Copyright 2021. NShome. All rights reserved.
+          <span id="year"></span> NShome. All rights reserved.
         </div>
       </div>
     </div>
+
+    <script>
+      const accessKey = 'jAMkSm4Rd2_WH152S9rXkVhx71lrV7a6eapFWb43y9w';
+
+      const imageIds = ['img1', 'img2', 'img3', 'img4', 'img5', 'img6', 'img7'];
+      const queries = ['water,mountain', 'galaxy,aurora', 'japan', 'travel', 'nature', 'flower', 'animal'];
+
+      imageIds.forEach((id, index) => {
+        fetch(`https://api.unsplash.com/photos/random?query=${queries[index]}&client_id=${accessKey}`)
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById(id).src = data.urls.regular;
+          })
+          .catch(error => console.error('Error fetching the image:', error));
+      });
+
+      // 현재 연도를 표시하는 함수
+      function displayCurrentYear() {
+        const yearSpan = document.getElementById('year');
+        const currentYear = new Date().getFullYear();
+        yearSpan.textContent = `Copyright ${currentYear}`;
+      }
+
+      // 페이지 로드 시 연도 표시 함수 호출
+      window.onload = displayCurrentYear;
+    </script>
   </body>
 </html>

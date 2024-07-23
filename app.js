@@ -1,12 +1,11 @@
 const { join } = require("path");
-
 const logger = require("morgan");
 const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const express = require("express");
 
 const app = express();
-const PORT = 80;
+const PORT = 5872;
 
 const server = require("http").createServer(app);
 
@@ -21,6 +20,12 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
+
+// 디버그 로그 추가
+app.use((req, res, next) => {
+  console.log(`Received request for ${req.url}`);
+  next();
+});
 
 function publicRooms() {
   const {
@@ -65,4 +70,4 @@ wsServer.on("connection", (socket) => {
 
 const handleListen = () =>
   console.log(`✅Listening on: http://www.nshome.me:${PORT}`);
-server.listen(PORT, handleListen);
+server.listen(PORT, '0.0.0.0', handleListen);

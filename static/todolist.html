@@ -87,7 +87,7 @@
           <br />
           nicorobinv@kakao.com<br />
           http:www.nshome.me <br />
-          Copyright 2021. NShome. All rights reserved.
+          <span id="year"></span> NShome. All rights reserved.
         </div>
       </div>
     </div>
@@ -97,5 +97,16 @@
     <script src="bg.js"></script>
     <script src="weather.js"></script>
     <script src="rename.js"></script>
+    <script>
+    
+      function displayCurrentYear() {
+        const yearSpan = document.getElementById('year');
+        const currentYear = new Date().getFullYear();
+        yearSpan.textContent = `Copyright ${currentYear}`;
+      }
+
+
+      window.onload = displayCurrentYear;
+    </script>
   </body>
 </html>

@@ -94,3 +94,16 @@ button {
 #button:focus {
   background: linear-gradient(to left top, #8b5db0, #000) fixed;
 }
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%;
+    }
+}

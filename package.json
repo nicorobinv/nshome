@@ -14,7 +14,6 @@
     "express": "^4.17.1",
     "helmet": "^3.23.1",
     "morgan": "^1.10.0",
-    "node-sass": "^6.0.1",
     "path": "^0.12.7",
     "socket.io": "^4.2.0",
     "ws": "^8.2.2"
@@ -35,6 +34,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
     "nodemon": "^2.0.4",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "sass": "^1.32.13"
   }
 }
